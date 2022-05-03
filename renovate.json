@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "config:base",
+    "group:allNonMajor",
+    ":prHourlyLimitNone"
+  ],
+  "dependencyDashboard": true,
+  "ignoreDeps": [
+    "sigs.k8s.io/controller-runtime/tools/setup-envtest",
+    "google.golang.org/genproto"
+  ],
+  "platformAutomerge": true,
+  "automerge": false,
+  "patch": {
+    "enabled": true
+  },
+  "minor": {
+    "enabled": true
+  },
+  "major": {
+    "enabled": true
+  },
+  "postUpdateOptions": [
+    "gomodTidy"
+  ]
+}

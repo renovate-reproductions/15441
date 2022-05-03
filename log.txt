@@ -1,0 +1,925 @@
+DEBUG: Using RE2 as regex engine
+DEBUG: Parsing configs
+DEBUG: Checking for config file in /usr/src/app/config.js
+DEBUG: File config
+       "config": {
+         "branchConcurrentLimit": 0,
+         "prHourlyLimit": 0,
+         "prConcurrentLimit": 0,
+         "recreateClosed": true,
+         "branchPrefix": "renovateSelfHosted/",
+         "token": "***********",
+         "onboarding": false,
+         "requireConfig": true,
+         "autodiscover": false,
+         "repositories": ["brumhard/renovate-testing2"],
+         "allowedPostUpgradeCommands": ["^go mod tidy$"],
+         "postUpgradeTasks": {
+           "commands": ["go mod tidy"],
+           "fileFilters": ["go.sum", "go.mod"],
+           "executionMode": "update"
+         }
+       }
+DEBUG: CLI config
+       "config": {}
+DEBUG: Env config
+       "config": {"hostRules": []}
+DEBUG: Combined config
+       "config": {
+         "branchConcurrentLimit": 0,
+         "prHourlyLimit": 0,
+         "prConcurrentLimit": 0,
+         "recreateClosed": true,
+         "branchPrefix": "renovateSelfHosted/",
+         "token": "***********",
+         "onboarding": false,
+         "requireConfig": true,
+         "autodiscover": false,
+         "repositories": ["brumhard/renovate-testing2"],
+         "allowedPostUpgradeCommands": ["^go mod tidy$"],
+         "postUpgradeTasks": {
+           "commands": ["go mod tidy"],
+           "fileFilters": ["go.sum", "go.mod"],
+           "executionMode": "update"
+         },
+         "hostRules": []
+       }
+DEBUG: Found valid git version: 2.36.0
+DEBUG: Using default github endpoint: https://api.github.com/
+DEBUG: GitHub 404
+       "url": "https://api.github.com/user/emails"
+DEBUG: Cannot read user/emails endpoint on GitHub to retrieve gitAuthor
+DEBUG: Platform config
+       "platformConfig": {
+         "hostType": "github",
+         "endpoint": "https://api.github.com/",
+         "isGHApp": false,
+         "isGhe": false,
+         "userDetails": {"username": "brumhard", "name": "Tobias Brumhard"},
+         "userEmail": null
+       },
+       "renovateUsername": "brumhard"
+DEBUG: Adding token authentication for api.github.com to hostRules
+DEBUG: Using baseDir: /tmp/renovate
+DEBUG: Using cacheDir: /tmp/renovate/cache
+DEBUG: Initializing Renovate internal cache into /tmp/renovate/cache/renovate/renovate-cache-v1
+DEBUG: Commits limit = null
+DEBUG: Setting global hostRules
+DEBUG: Adding token authentication for api.github.com to hostRules
+DEBUG: validatePresets()
+DEBUG: Reinitializing hostRules for repo
+DEBUG: Clearing hostRules
+DEBUG: Adding token authentication for api.github.com to hostRules
+ INFO: Repository started (repository=brumhard/renovate-testing2)
+       "renovateVersion": "32.39.0"
+DEBUG: Using localDir: /tmp/renovate/repos/github/brumhard/renovate-testing2 (repository=brumhard/renovate-testing2)
+DEBUG: resetMemCache() (repository=brumhard/renovate-testing2)
+DEBUG: initRepo("brumhard/renovate-testing2") (repository=brumhard/renovate-testing2)
+DEBUG: Overriding default GitHub endpoint (repository=brumhard/renovate-testing2)
+       "endpoint": "https://api.github.com/"
+DEBUG: brumhard/renovate-testing2 default branch = main (repository=brumhard/renovate-testing2)
+DEBUG: Using personal access token for git init (repository=brumhard/renovate-testing2)
+DEBUG: Resetting npmrc (repository=brumhard/renovate-testing2)
+DEBUG: detectSemanticCommits() (repository=brumhard/renovate-testing2)
+DEBUG: Initializing git repository into /tmp/renovate/repos/github/brumhard/renovate-testing2 (repository=brumhard/renovate-testing2)
+DEBUG: Performing blobless clone (repository=brumhard/renovate-testing2)
+DEBUG: git clone completed (repository=brumhard/renovate-testing2)
+       "durationMs": 2093
+DEBUG: latest repository commit (repository=brumhard/renovate-testing2)
+       "latestCommit": {
+         "hash": "dde2f8fc753383dc4090b0b842fff6edb20b3c50",
+         "date": "2022-05-04T10:24:15+02:00",
+         "message": "awdawd",
+         "refs": "HEAD -> main, origin/main, origin/HEAD",
+         "body": "Signed-off-by: Tobias Brumhard <code@brumhard.com>\n",
+         "author_name": "Tobias Brumhard",
+         "author_email": "code@brumhard.com"
+       }
+DEBUG: getCommitMessages (repository=brumhard/renovate-testing2)
+DEBUG: Semantic commits detection: unknown (repository=brumhard/renovate-testing2)
+DEBUG: No semantic commits detected (repository=brumhard/renovate-testing2)
+DEBUG: checkOnboarding() (repository=brumhard/renovate-testing2)
+DEBUG: isOnboarded() (repository=brumhard/renovate-testing2)
+DEBUG: findFile(renovate.json) (repository=brumhard/renovate-testing2)
+DEBUG: Config file exists (repository=brumhard/renovate-testing2)
+       "fileName": "renovate.json"
+DEBUG: Retrieving issueList (repository=brumhard/renovate-testing2)
+DEBUG: Retrieved 1 issues (repository=brumhard/renovate-testing2)
+DEBUG: Repo is onboarded (repository=brumhard/renovate-testing2)
+DEBUG: Found renovate.json config file (repository=brumhard/renovate-testing2)
+DEBUG: Repository config (repository=brumhard/renovate-testing2)
+       "fileName": "renovate.json",
+       "config": {
+         "extends": ["config:base", "group:allNonMajor", ":prHourlyLimitNone"],
+         "dependencyDashboard": true,
+         "ignoreDeps": [
+           "sigs.k8s.io/controller-runtime/tools/setup-envtest",
+           "google.golang.org/genproto"
+         ],
+         "platformAutomerge": true,
+         "automerge": false,
+         "patch": {"enabled": true},
+         "minor": {"enabled": true},
+         "major": {"enabled": true},
+         "postUpdateOptions": ["gomodTidy"]
+       }
+DEBUG: migrateAndValidate() (repository=brumhard/renovate-testing2)
+DEBUG: No config migration necessary (repository=brumhard/renovate-testing2)
+DEBUG: massaged config (repository=brumhard/renovate-testing2)
+       "config": {
+         "extends": ["config:base", "group:allNonMajor", ":prHourlyLimitNone"],
+         "dependencyDashboard": true,
+         "ignoreDeps": [
+           "sigs.k8s.io/controller-runtime/tools/setup-envtest",
+           "google.golang.org/genproto"
+         ],
+         "platformAutomerge": true,
+         "automerge": false,
+         "patch": {"enabled": true},
+         "minor": {"enabled": true},
+         "major": {"enabled": true},
+         "postUpdateOptions": ["gomodTidy"]
+       }
+DEBUG: migrated config (repository=brumhard/renovate-testing2)
+       "config": {
+         "extends": ["config:base", "group:allNonMajor", ":prHourlyLimitNone"],
+         "dependencyDashboard": true,
+         "ignoreDeps": [
+           "sigs.k8s.io/controller-runtime/tools/setup-envtest",
+           "google.golang.org/genproto"
+         ],
+         "platformAutomerge": true,
+         "automerge": false,
+         "patch": {"enabled": true},
+         "minor": {"enabled": true},
+         "major": {"enabled": true},
+         "postUpdateOptions": ["gomodTidy"]
+       }
+DEBUG: Setting hostRules from config (repository=brumhard/renovate-testing2)
+DEBUG: Found repo ignorePaths (repository=brumhard/renovate-testing2)
+       "ignorePaths": [
+         "**/node_modules/**",
+         "**/bower_components/**",
+         "**/vendor/**",
+         "**/examples/**",
+         "**/__tests__/**",
+         "**/test/**",
+         "**/tests/**",
+         "**/__fixtures__/**"
+       ]
+DEBUG: No vulnerability alerts found (repository=brumhard/renovate-testing2)
+DEBUG: No vulnerability alerts found (repository=brumhard/renovate-testing2)
+DEBUG: findIssue(Dependency Dashboard) (repository=brumhard/renovate-testing2)
+DEBUG: Found issue 5 (repository=brumhard/renovate-testing2)
+DEBUG: No baseBranches (repository=brumhard/renovate-testing2)
+DEBUG: extract() (repository=brumhard/renovate-testing2)
+DEBUG: Setting current branch to main (repository=brumhard/renovate-testing2)
+DEBUG: latest commit (repository=brumhard/renovate-testing2)
+       "branchName": "main",
+       "latestCommitDate": "2022-05-04T10:24:15+02:00"
+DEBUG: Using file match: (^|/)tasks/[^/]+\.ya?ml$ for manager ansible (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)requirements\.ya?ml$ for manager ansible-galaxy (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)galaxy\.ya?ml$ for manager ansible-galaxy (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: azure.*pipelines?.*\.ya?ml$ for manager azure-pipelines (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)batect(-bundle)?\.yml$ for manager batect (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)batect$ for manager batect-wrapper (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)WORKSPACE(|\.bazel)$ for manager bazel (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: \.bzl$ for manager bazel (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)\.?bitbucket-pipelines\.ya?ml$ for manager bitbucket-pipelines (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: buildkite\.ya?ml for manager buildkite (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: \.buildkite/.+\.ya?ml$ for manager buildkite (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)Gemfile$ for manager bundler (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: \.cake$ for manager cake (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)Cargo.toml$ for manager cargo (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/).circleci/config.yml$ for manager circleci (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)cloudbuild.ya?ml for manager cloudbuild (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)Podfile$ for manager cocoapods (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)([\w-]*)composer.json$ for manager composer (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)conanfile\.(txt|py)$ for manager conan (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)deps\.edn$ for manager deps-edn (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)docker-compose[^/]*\.ya?ml$ for manager docker-compose (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/|\.)Dockerfile$ for manager dockerfile (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)Dockerfile\.[^/]*$ for manager dockerfile (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/).drone.yml$ for manager droneci (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)flux-system/gotk-components\.yaml$ for manager flux (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|\/)\.fvm\/fvm_config\.json$ for manager fvm (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/).gitmodules$ for manager git-submodules (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: ^(workflow-templates|\.github\/workflows)\/[^/]+\.ya?ml$ for manager github-actions (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|\/)action\.ya?ml$ for manager github-actions (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: \.gitlab-ci\.yml$ for manager gitlabci (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: \.gitlab-ci\.yml$ for manager gitlabci-include (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)go.mod$ for manager gomod (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: \.gradle(\.kts)?$ for manager gradle (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|\/)gradle\.properties$ for manager gradle (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|\/)gradle\/.+\.toml$ for manager gradle (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: \.versions\.toml$ for manager gradle (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)gradle/wrapper/gradle-wrapper.properties$ for manager gradle-wrapper (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)requirements\.yaml$ for manager helm-requirements (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)values.yaml$ for manager helm-values (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)helmfile.yaml$ for manager helmfile (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)Chart.yaml$ for manager helmv3 (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: ^Formula/[^/]+[.]rb$ for manager homebrew (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: \.html?$ for manager html (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)plugins\.(txt|ya?ml)$ for manager jenkins (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)jsonnetfile.json$ for manager jsonnet-bundler (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)kustomization\.ya?ml$ for manager kustomize (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)project\.clj$ for manager leiningen (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/|\.)pom\.xml$ for manager maven (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: ^(((\.mvn)|(\.m2))/)?settings\.xml$ for manager maven (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)package.js$ for manager meteor (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)mix\.exs$ for manager mix (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/).node-version$ for manager nodenv (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)package.json$ for manager npm (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: \.(?:cs|fs|vb)proj$ for manager nuget (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: \.(?:props|targets)$ for manager nuget (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|\/)dotnet-tools\.json$ for manager nuget (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|\/)global\.json$ for manager nuget (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)\.nvmrc$ for manager nvm (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)([\w-]*)requirements\.(txt|pip)$ for manager pip_requirements (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)setup.py$ for manager pip_setup (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)Pipfile$ for manager pipenv (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)pyproject\.toml$ for manager poetry (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)\.pre-commit-config\.yaml$ for manager pre-commit (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)pubspec\.ya?ml$ for manager pub (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/).python-version$ for manager pyenv (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)\.ruby-version$ for manager ruby-version (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: \.sbt$ for manager sbt (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: project/[^/]*.scala$ for manager sbt (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)setup\.cfg$ for manager setup-cfg (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)Package\.swift for manager swift (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: \.tf$ for manager terraform (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)\.terraform-version$ for manager terraform-version (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)terragrunt\.hcl$ for manager terragrunt (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: (^|/)\.terragrunt-version$ for manager terragrunt-version (repository=brumhard/renovate-testing2)
+DEBUG: Using file match: ^.travis.yml$ for manager travis (repository=brumhard/renovate-testing2)
+DEBUG: Matched 1 file(s) for manager gomod: go.mod (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/Masterminds/semver v1.5.0 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/beorn7/perks v1.0.1 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/cespare/xxhash/v2 v2.1.1 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/davecgh/go-spew v1.1.1 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/evanphx/json-patch v4.12.0+incompatible // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/fsnotify/fsnotify v1.5.1 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/go-logr/logr v1.2.0 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/go-logr/zapr v1.2.0 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/gogo/protobuf v1.3.2 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/golang/protobuf v1.5.2 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/google/go-cmp v0.5.6 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/google/gofuzz v1.1.0 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/google/uuid v1.1.2 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/googleapis/gnostic v0.5.5 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/imdario/mergo v0.3.12 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/json-iterator/go v1.1.12 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/matttproud/golang_protobuf_extensions v1.0.2-0.20181231171920-c182affec369 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/mitchellh/mapstructure v1.4.1 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/modern-go/reflect2 v1.0.2 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/prometheus/client_golang v1.11.0 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/prometheus/client_model v0.2.0 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/prometheus/common v0.28.0 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/prometheus/procfs v0.6.0 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/spf13/afero v1.6.0 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	github.com/spf13/pflag v1.0.5 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	go.uber.org/atomic v1.7.0 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	go.uber.org/multierr v1.6.0 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	golang.org/x/net v0.0.0-20220225172249-27dd8689420f // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	golang.org/x/oauth2 v0.0.0-20210819190943-2bc19b11175f // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	golang.org/x/sys v0.0.0-20220319134239-a9b59b0215f8 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	golang.org/x/text v0.3.7 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	gomodules.xyz/jsonpatch/v2 v2.2.0 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	google.golang.org/appengine v1.6.7 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	google.golang.org/protobuf v1.27.1 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	gopkg.in/inf.v0 v0.9.1 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	gopkg.in/yaml.v2 v2.4.0 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	k8s.io/apiextensions-apiserver v0.23.3 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	k8s.io/component-base v0.23.3 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	k8s.io/klog/v2 v2.30.0 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	k8s.io/kube-openapi v0.0.0-20211115234752-e816edb12b65 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	k8s.io/utils v0.0.0-20211116205334-6203023598ed // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	sigs.k8s.io/structured-merge-diff/v4 v4.2.1 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: No multi-line match: 	sigs.k8s.io/yaml v1.3.0 // indirect (repository=brumhard/renovate-testing2)
+DEBUG: Found gomod package files (repository=brumhard/renovate-testing2)
+DEBUG: Found 1 package file(s) (repository=brumhard/renovate-testing2)
+ INFO: Dependency extraction complete (repository=brumhard/renovate-testing2)
+       "baseBranch": "main",
+       "stats": {
+         "managers": {"gomod": {"fileCount": 1, "depCount": 12}},
+         "total": {"fileCount": 1, "depCount": 12}
+       }
+DEBUG: Go lookup source url (repository=brumhard/renovate-testing2)
+       "goModule": "go.uber.org/automaxprocs",
+       "goSourceUrl": "https://github.com/uber-go/automaxprocs"
+DEBUG: Go lookup source url (repository=brumhard/renovate-testing2)
+       "goModule": "k8s.io/apimachinery",
+       "goSourceUrl": "https://github.com/kubernetes/apimachinery"
+DEBUG: Go lookup source url (repository=brumhard/renovate-testing2)
+       "goModule": "k8s.io/api",
+       "goSourceUrl": "https://github.com/kubernetes/api"
+DEBUG: Go lookup source url (repository=brumhard/renovate-testing2)
+       "goModule": "go.uber.org/zap",
+       "goSourceUrl": "https://github.com/uber-go/zap"
+DEBUG: Go lookup source url (repository=brumhard/renovate-testing2)
+       "goModule": "k8s.io/client-go",
+       "goSourceUrl": "https://github.com/kubernetes/client-go"
+DEBUG: Go lookup source url (repository=brumhard/renovate-testing2)
+       "goModule": "sigs.k8s.io/controller-runtime",
+       "goSourceUrl": "https://github.com/kubernetes-sigs/controller-runtime"
+DEBUG: Dependency is ignored (repository=brumhard/renovate-testing2, dependency=sigs.k8s.io/controller-runtime/tools/setup-envtest)
+DEBUG: Package releases lookups complete (repository=brumhard/renovate-testing2)
+       "baseBranch": "main"
+DEBUG: branchifyUpgrades (repository=brumhard/renovate-testing2)
+DEBUG: Using group branchName template (repository=brumhard/renovate-testing2)
+DEBUG: Dependency github.com/brumhard/alligotor is part of group all non-major dependencies (repository=brumhard/renovate-testing2)
+DEBUG: Using group branchName template (repository=brumhard/renovate-testing2)
+DEBUG: Dependency k8s.io/api is part of group all non-major dependencies (repository=brumhard/renovate-testing2)
+DEBUG: Using group branchName template (repository=brumhard/renovate-testing2)
+DEBUG: Dependency k8s.io/apimachinery is part of group all non-major dependencies (repository=brumhard/renovate-testing2)
+DEBUG: Using group branchName template (repository=brumhard/renovate-testing2)
+DEBUG: Dependency k8s.io/client-go is part of group kubernetes packages (repository=brumhard/renovate-testing2)
+DEBUG: 4 flattened updates found: github.com/brumhard/alligotor, k8s.io/api, k8s.io/apimachinery, k8s.io/client-go (repository=brumhard/renovate-testing2)
+DEBUG: Returning 2 branch(es) (repository=brumhard/renovate-testing2)
+DEBUG: Fetching changelog: https://github.com/kubernetes/apimachinery (v0.23.5 -> v0.24.0) (repository=brumhard/renovate-testing2)
+DEBUG: Fetching changelog: https://github.com/kubernetes/api (v0.23.5 -> v0.24.0) (repository=brumhard/renovate-testing2)
+DEBUG: Fetching changelog: https://github.com/brumhard/alligotor (v0.3.2 -> v0.3.3) (repository=brumhard/renovate-testing2)
+DEBUG: Fetching changelog: https://github.com/kubernetes/client-go (v11.0.1-0.20190409021438-1a26190bd76a+incompatible -> v12.0.0) (repository=brumhard/renovate-testing2)
+DEBUG: Not enough valid releases for dep k8s.io/client-go (repository=brumhard/renovate-testing2)
+DEBUG: config.repoIsOnboarded=true (repository=brumhard/renovate-testing2)
+DEBUG: packageFiles with updates (repository=brumhard/renovate-testing2)
+       "config": {
+         "gomod": [
+           {
+             "packageFile": "go.mod",
+             "constraints": {"go": "^1.18"},
+             "deps": [
+               {
+                 "managerData": {"lineNumber": 5, "multiLine": true},
+                 "depName": "github.com/brumhard/alligotor",
+                 "depType": "require",
+                 "currentValue": "v0.3.2",
+                 "datasource": "go",
+                 "depIndex": 0,
+                 "updates": [
+                   {
+                     "bucket": "non-major",
+                     "newVersion": "v0.3.3",
+                     "newValue": "v0.3.3",
+                     "releaseTimestamp": "2022-04-30T15:56:57.000Z",
+                     "newMajor": 0,
+                     "newMinor": 3,
+                     "updateType": "patch",
+                     "branchName": "renovateSelfHosted/all-minor-patch"
+                   }
+                 ],
+                 "warnings": [],
+                 "versioning": "semver",
+                 "sourceUrl": "https://github.com/brumhard/alligotor",
+                 "currentVersion": "v0.3.2",
+                 "isSingleVersion": true,
+                 "fixedVersion": "v0.3.2"
+               },
+               {
+                 "managerData": {"lineNumber": 6, "multiLine": true},
+                 "depName": "github.com/gardener/gardener",
+                 "depType": "require",
+                 "currentValue": "v1.45.0",
+                 "datasource": "go",
+                 "depIndex": 1,
+                 "updates": [],
+                 "warnings": [],
+                 "versioning": "semver",
+                 "sourceUrl": "https://github.com/gardener/gardener",
+                 "currentVersion": "v1.45.0",
+                 "fixedVersion": "v1.45.0"
+               },
+               {
+                 "managerData": {"lineNumber": 7, "multiLine": true},
+                 "depName": "github.com/onsi/ginkgo/v2",
+                 "depType": "require",
+                 "currentValue": "v2.1.4",
+                 "datasource": "go",
+                 "depIndex": 2,
+                 "updates": [],
+                 "warnings": [],
+                 "versioning": "semver",
+                 "sourceUrl": "https://github.com/onsi/ginkgo",
+                 "currentVersion": "v2.1.4",
+                 "fixedVersion": "v2.1.4"
+               },
+               {
+                 "managerData": {"lineNumber": 8, "multiLine": true},
+                 "depName": "github.com/onsi/gomega",
+                 "depType": "require",
+                 "currentValue": "v1.19.0",
+                 "datasource": "go",
+                 "depIndex": 3,
+                 "updates": [],
+                 "warnings": [],
+                 "versioning": "semver",
+                 "sourceUrl": "https://github.com/onsi/gomega",
+                 "currentVersion": "v1.19.0",
+                 "fixedVersion": "v1.19.0"
+               },
+               {
+                 "managerData": {"lineNumber": 9, "multiLine": true},
+                 "depName": "github.com/pkg/errors",
+                 "depType": "require",
+                 "currentValue": "v0.9.1",
+                 "datasource": "go",
+                 "depIndex": 4,
+                 "updates": [],
+                 "warnings": [],
+                 "versioning": "semver",
+                 "sourceUrl": "https://github.com/pkg/errors",
+                 "currentVersion": "v0.9.1",
+                 "fixedVersion": "v0.9.1"
+               },
+               {
+                 "managerData": {"lineNumber": 10, "multiLine": true},
+                 "depName": "go.uber.org/automaxprocs",
+                 "depType": "require",
+                 "currentValue": "v1.5.1",
+                 "datasource": "go",
+                 "depIndex": 5,
+                 "updates": [],
+                 "warnings": [],
+                 "versioning": "semver",
+                 "sourceUrl": "https://github.com/uber-go/automaxprocs",
+                 "currentVersion": "v1.5.1",
+                 "fixedVersion": "v1.5.1"
+               },
+               {
+                 "managerData": {"lineNumber": 11, "multiLine": true},
+                 "depName": "go.uber.org/zap",
+                 "depType": "require",
+                 "currentValue": "v1.21.0",
+                 "datasource": "go",
+                 "depIndex": 6,
+                 "updates": [],
+                 "warnings": [],
+                 "versioning": "semver",
+                 "sourceUrl": "https://github.com/uber-go/zap",
+                 "currentVersion": "v1.21.0",
+                 "fixedVersion": "v1.21.0"
+               },
+               {
+                 "managerData": {"lineNumber": 12, "multiLine": true},
+                 "depName": "k8s.io/api",
+                 "depType": "require",
+                 "currentValue": "v0.23.5",
+                 "datasource": "go",
+                 "depIndex": 7,
+                 "updates": [
+                   {
+                     "bucket": "non-major",
+                     "newVersion": "v0.24.0",
+                     "newValue": "v0.24.0",
+                     "newMajor": 0,
+                     "newMinor": 24,
+                     "updateType": "minor",
+                     "branchName": "renovateSelfHosted/all-minor-patch"
+                   }
+                 ],
+                 "warnings": [],
+                 "versioning": "semver",
+                 "sourceUrl": "https://github.com/kubernetes/api",
+                 "currentVersion": "v0.23.5",
+                 "isSingleVersion": true,
+                 "fixedVersion": "v0.23.5"
+               },
+               {
+                 "managerData": {"lineNumber": 13, "multiLine": true},
+                 "depName": "k8s.io/apimachinery",
+                 "depType": "require",
+                 "currentValue": "v0.23.5",
+                 "datasource": "go",
+                 "depIndex": 8,
+                 "updates": [
+                   {
+                     "bucket": "non-major",
+                     "newVersion": "v0.24.0",
+                     "newValue": "v0.24.0",
+                     "newMajor": 0,
+                     "newMinor": 24,
+                     "updateType": "minor",
+                     "branchName": "renovateSelfHosted/all-minor-patch"
+                   }
+                 ],
+                 "warnings": [],
+                 "versioning": "semver",
+                 "sourceUrl": "https://github.com/kubernetes/apimachinery",
+                 "currentVersion": "v0.23.5",
+                 "isSingleVersion": true,
+                 "fixedVersion": "v0.23.5"
+               },
+               {
+                 "managerData": {"lineNumber": 14, "multiLine": true},
+                 "depName": "k8s.io/client-go",
+                 "depType": "require",
+                 "currentValue": "v11.0.1-0.20190409021438-1a26190bd76a+incompatible",
+                 "datasource": "go",
+                 "depIndex": 9,
+                 "updates": [
+                   {
+                     "bucket": "major",
+                     "newVersion": "v12.0.0",
+                     "newValue": "v12.0.0",
+                     "newMajor": 12,
+                     "newMinor": 0,
+                     "updateType": "major",
+                     "branchName": "renovateSelfHosted/major-kubernetes-go"
+                   }
+                 ],
+                 "warnings": [],
+                 "versioning": "semver",
+                 "sourceUrl": "https://github.com/kubernetes/client-go",
+                 "currentVersion": "v11.0.1-0.20190409021438-1a26190bd76a+incompatible",
+                 "isSingleVersion": true,
+                 "fixedVersion": "v11.0.1-0.20190409021438-1a26190bd76a+incompatible"
+               },
+               {
+                 "managerData": {"lineNumber": 15, "multiLine": true},
+                 "depName": "sigs.k8s.io/controller-runtime",
+                 "depType": "require",
+                 "currentValue": "v0.11.2",
+                 "datasource": "go",
+                 "depIndex": 10,
+                 "updates": [],
+                 "warnings": [],
+                 "versioning": "semver",
+                 "sourceUrl": "https://github.com/kubernetes-sigs/controller-runtime",
+                 "currentVersion": "v0.11.2",
+                 "fixedVersion": "v0.11.2"
+               },
+               {
+                 "managerData": {"lineNumber": 16, "multiLine": true},
+                 "depName": "sigs.k8s.io/controller-runtime/tools/setup-envtest",
+                 "depType": "require",
+                 "currentValue": "v0.0.0-20211208212546-f236f0345ad2",
+                 "datasource": "go",
+                 "currentDigest": "f236f0345ad2",
+                 "digestOneAndOnly": true,
+                 "depIndex": 11,
+                 "updates": [],
+                 "skipReason": "ignored"
+               }
+             ]
+           }
+         ]
+       }
+DEBUG: processRepo() (repository=brumhard/renovate-testing2)
+DEBUG: Processing 2 branches: renovateSelfHosted/all-minor-patch, renovateSelfHosted/major-kubernetes-go (repository=brumhard/renovate-testing2)
+DEBUG: Calculating prConcurrentLimit (10) (repository=brumhard/renovate-testing2)
+DEBUG: getBranchPr(renovateSelfHosted/all-minor-patch) (repository=brumhard/renovate-testing2)
+DEBUG: findPr(renovateSelfHosted/all-minor-patch, undefined, open) (repository=brumhard/renovate-testing2)
+DEBUG: getPrList success (repository=brumhard/renovate-testing2)
+       "pullsTotal": 2,
+       "requestsTotal": 1,
+       "apiQuotaAffected": true
+DEBUG: Found PR #3 (repository=brumhard/renovate-testing2)
+DEBUG: getBranchPr(renovateSelfHosted/major-kubernetes-go) (repository=brumhard/renovate-testing2)
+DEBUG: findPr(renovateSelfHosted/major-kubernetes-go, undefined, open) (repository=brumhard/renovate-testing2)
+DEBUG: Found PR #4 (repository=brumhard/renovate-testing2)
+DEBUG: 2 PRs are currently open (repository=brumhard/renovate-testing2)
+DEBUG: PR concurrent limit remaining: 8 (repository=brumhard/renovate-testing2)
+DEBUG: Calculated maximum PRs remaining this run (repository=brumhard/renovate-testing2)
+       "prsRemaining": 8
+DEBUG: PullRequests limit = 8 (repository=brumhard/renovate-testing2)
+DEBUG: Calculated maximum branches remaining this run (repository=brumhard/renovate-testing2)
+       "branchesRemaining": 99
+DEBUG: Branches limit = 99 (repository=brumhard/renovate-testing2)
+DEBUG: Setting current branch to main (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: latest commit (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "branchName": "main",
+       "latestCommitDate": "2022-05-04T10:24:15+02:00"
+DEBUG: getBranchPr(renovateSelfHosted/all-minor-patch) (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: findPr(renovateSelfHosted/all-minor-patch, undefined, open) (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Found PR #3 (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: branchExists=true (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: dependencyDashboardCheck=undefined (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: PR rebase requested=true (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Checking if PR has been edited (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Branch has not been modified (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "branchName": "renovateSelfHosted/all-minor-patch"
+DEBUG: Found existing branch PR (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Checking schedule(at any time, null) (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: No schedule defined (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Manual rebase requested via Dependency Dashboard (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Using reuseExistingBranch: false (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: manager.getUpdatedPackageFiles() reuseExistinbranch=false (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: gomod.updateDependency: v0.3.3 (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Updating github.com/brumhard/alligotor in go.mod (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: gomod.updateDependency: v0.24.0 (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Updating k8s.io/api in go.mod (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: gomod.updateDependency: v0.24.0 (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Updating k8s.io/apimachinery in go.mod (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: gomod.updateArtifacts(go.mod) (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Removed some relative replace statements from go.mod (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Adding Git authentication for Go Module retrieval for https://api.github.com/ using token auth. (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: go get command included (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "cmd": "go",
+       "args": "get -d -t ./..."
+DEBUG: go mod tidy command included (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "cmd": "go",
+       "args": "mod tidy"
+DEBUG: additional go mod tidy command included (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "cmd": "go",
+       "args": "mod tidy"
+DEBUG: Executing command (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "command": "go get -d -t ./..."
+DEBUG: exec completed (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "cmd": "go get -d -t ./...",
+       "durationMs": 28173,
+       "stdout": "",
+       "stderr": "go: downloading go.uber.org/zap v1.21.0\ngo: downloading github.com/gardener/gardener v1.45.0\ngo: downloading github.com/onsi/gomega v1.19.0\ngo: downloading github.com/onsi/ginkgo/v2 v2.1.4\ngo: downloading go.uber.org/automaxprocs v1.5.1\ngo: downloading github.com/pkg/errors v0.9.1\ngo: downloading github.com/brumhard/alligotor v0.3.3\ngo: downloading k8s.io/api v0.24.0\ngo: downloading k8s.io/apimachinery v0.24.0\ngo: downloading k8s.io/client-go v11.0.1-0.20190409021438-1a26190bd76a+incompatible\ngo: downloading sigs.k8s.io/controller-runtime v0.11.2\ngo: downloading sigs.k8s.io/controller-runtime/tools/setup-envtest v0.0.0-20211208212546-f236f0345ad2\ngo: downloading github.com/mitchellh/mapstructure v1.5.0\ngo: downloading github.com/spf13/pflag v1.0.5\ngo: downloading gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b\ngo: downloading go.uber.org/atomic v1.7.0\ngo: downloading go.uber.org/multierr v1.6.0\ngo: downloading github.com/gogo/protobuf v1.3.2\ngo: downloading github.com/google/gofuzz v1.1.0\ngo: downloading golang.org/x/net v0.0.0-20220225172249-27dd8689420f\ngo: downloading gopkg.in/yaml.v2 v2.4.0\ngo: downloading golang.org/x/sys v0.0.0-20220319134239-a9b59b0215f8\ngo: downloading github.com/go-logr/logr v1.2.0\ngo: downloading github.com/go-logr/zapr v1.2.0\ngo: downloading github.com/spf13/afero v1.6.0\ngo: downloading gopkg.in/inf.v0 v0.9.1\ngo: downloading k8s.io/klog/v2 v2.60.1\ngo: downloading k8s.io/utils v0.0.0-20220210201930-3a6ce19ff2f9\ngo: downloading sigs.k8s.io/structured-merge-diff/v4 v4.2.1\ngo: downloading github.com/prometheus/client_golang v1.11.0\ngo: downloading sigs.k8s.io/json v0.0.0-20211208200746-9f7c6b3444d2\ngo: downloading golang.org/x/text v0.3.7\ngo: downloading k8s.io/klog v1.0.0\ngo: downloading github.com/imdario/mergo v0.3.12\ngo: downloading golang.org/x/crypto v0.0.0-20210817164053-32db794688a5\ngo: downloading golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac\ngo: downloading github.com/evanphx/json-patch v4.12.0+incompatible\ngo: downloading k8s.io/apiextensions-apiserver v0.23.5\ngo: downloading k8s.io/component-base v0.23.5\ngo: downloading gomodules.xyz/jsonpatch/v2 v2.2.0\ngo: downloading github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da\ngo: downloading github.com/json-iterator/go v1.1.12\ngo: downloading sigs.k8s.io/yaml v1.3.0\ngo: downloading github.com/davecgh/go-spew v1.1.1\ngo: downloading golang.org/x/oauth2 v0.0.0-20210819190943-2bc19b11175f\ngo: downloading github.com/prometheus/client_model v0.2.0\ngo: downloading github.com/prometheus/common v0.28.0\ngo: downloading github.com/golang/protobuf v1.5.2\ngo: downloading github.com/googleapis/gnostic v0.5.5\ngo: downloading k8s.io/kube-openapi v0.0.0-20220328201542-3ee0da9b0b42\ngo: downloading golang.org/x/term v0.0.0-20210927222741-03fcf44c2211\ngo: downloading github.com/google/uuid v1.1.2\ngo: downloading github.com/beorn7/perks v1.0.1\ngo: downloading github.com/cespare/xxhash/v2 v2.1.1\ngo: downloading github.com/prometheus/procfs v0.6.0\ngo: downloading github.com/fsnotify/fsnotify v1.5.1\ngo: downloading github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd\ngo: downloading github.com/modern-go/reflect2 v1.0.2\ngo: downloading github.com/matttproud/golang_protobuf_extensions v1.0.2-0.20181231171920-c182affec369\ngo: downloading google.golang.org/protobuf v1.27.1\ngo: downloading github.com/google/go-cmp v0.5.6\ngo: downloading google.golang.org/appengine v1.6.7\ngo: downloading github.com/google/gnostic v0.5.7-v3refs\ngo: downloading github.com/Masterminds/semver v1.5.0\ngo: downloading github.com/googleapis/gnostic v0.6.9\ngo: downloading k8s.io/client-go v0.24.0\ngo: upgraded github.com/mitchellh/mapstructure v1.4.1 => v1.5.0\ngo: upgraded k8s.io/apiextensions-apiserver v0.23.3 => v0.23.5\ngo: upgraded k8s.io/component-base v0.23.3 => v0.23.5\ngo: upgraded k8s.io/klog/v2 v2.30.0 => v2.60.1\ngo: upgraded k8s.io/kube-openapi v0.0.0-20211115234752-e816edb12b65 => v0.0.0-20220328201542-3ee0da9b0b42\ngo: upgraded k8s.io/utils v0.0.0-20211116205334-6203023598ed => v0.0.0-20220210201930-3a6ce19ff2f9\n"
+DEBUG: Executing command (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "command": "go mod tidy"
+DEBUG: rawExec err (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "err": {
+         "killed": false,
+         "code": 1,
+         "signal": null,
+         "cmd": "go mod tidy",
+         "stdout": "",
+         "stderr": "go: downloading github.com/stretchr/testify v1.7.1\ngo: downloading go.uber.org/goleak v1.1.12\ngo: downloading github.com/onsi/ginkgo v1.16.5\ngo: downloading gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f\ngo: downloading github.com/benbjohnson/clock v1.1.0\ngo: downloading github.com/prashantv/gostub v1.1.0\ngo: downloading golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1\ngo: downloading github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e\ngo: downloading github.com/pmezard/go-difflib v1.0.0\ngo: downloading github.com/kr/text v0.2.0\ngo: downloading github.com/nxadm/tail v1.4.8\ngo: downloading gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7\ngo: finding module for package github.com/googleapis/gnostic/OpenAPIv2\ngo: finding module for package k8s.io/api/batch/v2alpha1\ngo: finding module for package k8s.io/api/settings/v1alpha1\ngo: finding module for package k8s.io/client-go/metadata\ngo: finding module for package k8s.io/api/auditregistration/v1alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/auditregistration/v1alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/auditregistration/v1alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/batch/v2alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/batch/v2alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/settings/v1alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/settings/v1alpha1\nmmh imports\n\tsigs.k8s.io/controller-runtime imports\n\tsigs.k8s.io/controller-runtime/pkg/builder imports\n\tsigs.k8s.io/controller-runtime/pkg/client imports\n\tk8s.io/client-go/metadata: package k8s.io/client-go/metadata provided by k8s.io/client-go at latest version v0.24.0 but not at required version v11.0.1-0.20190409021438-1a26190bd76a+incompatible\nmmh imports\n\tsigs.k8s.io/controller-runtime imports\n\tsigs.k8s.io/controller-runtime/pkg/builder imports\n\tsigs.k8s.io/controller-runtime/pkg/client/apiutil imports\n\tk8s.io/client-go/discovery imports\n\tgithub.com/googleapis/gnostic/OpenAPIv2: module github.com/googleapis/gnostic@latest found (v0.6.9), but does not contain package github.com/googleapis/gnostic/OpenAPIv2\n",
+         "message": "Command failed: go mod tidy\ngo: downloading github.com/stretchr/testify v1.7.1\ngo: downloading go.uber.org/goleak v1.1.12\ngo: downloading github.com/onsi/ginkgo v1.16.5\ngo: downloading gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f\ngo: downloading github.com/benbjohnson/clock v1.1.0\ngo: downloading github.com/prashantv/gostub v1.1.0\ngo: downloading golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1\ngo: downloading github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e\ngo: downloading github.com/pmezard/go-difflib v1.0.0\ngo: downloading github.com/kr/text v0.2.0\ngo: downloading github.com/nxadm/tail v1.4.8\ngo: downloading gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7\ngo: finding module for package github.com/googleapis/gnostic/OpenAPIv2\ngo: finding module for package k8s.io/api/batch/v2alpha1\ngo: finding module for package k8s.io/api/settings/v1alpha1\ngo: finding module for package k8s.io/client-go/metadata\ngo: finding module for package k8s.io/api/auditregistration/v1alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/auditregistration/v1alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/auditregistration/v1alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/batch/v2alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/batch/v2alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/settings/v1alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/settings/v1alpha1\nmmh imports\n\tsigs.k8s.io/controller-runtime imports\n\tsigs.k8s.io/controller-runtime/pkg/builder imports\n\tsigs.k8s.io/controller-runtime/pkg/client imports\n\tk8s.io/client-go/metadata: package k8s.io/client-go/metadata provided by k8s.io/client-go at latest version v0.24.0 but not at required version v11.0.1-0.20190409021438-1a26190bd76a+incompatible\nmmh imports\n\tsigs.k8s.io/controller-runtime imports\n\tsigs.k8s.io/controller-runtime/pkg/builder imports\n\tsigs.k8s.io/controller-runtime/pkg/client/apiutil imports\n\tk8s.io/client-go/discovery imports\n\tgithub.com/googleapis/gnostic/OpenAPIv2: module github.com/googleapis/gnostic@latest found (v0.6.9), but does not contain package github.com/googleapis/gnostic/OpenAPIv2\n",
+         "stack": "Error: Command failed: go mod tidy\ngo: downloading github.com/stretchr/testify v1.7.1\ngo: downloading go.uber.org/goleak v1.1.12\ngo: downloading github.com/onsi/ginkgo v1.16.5\ngo: downloading gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f\ngo: downloading github.com/benbjohnson/clock v1.1.0\ngo: downloading github.com/prashantv/gostub v1.1.0\ngo: downloading golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1\ngo: downloading github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e\ngo: downloading github.com/pmezard/go-difflib v1.0.0\ngo: downloading github.com/kr/text v0.2.0\ngo: downloading github.com/nxadm/tail v1.4.8\ngo: downloading gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7\ngo: finding module for package github.com/googleapis/gnostic/OpenAPIv2\ngo: finding module for package k8s.io/api/batch/v2alpha1\ngo: finding module for package k8s.io/api/settings/v1alpha1\ngo: finding module for package k8s.io/client-go/metadata\ngo: finding module for package k8s.io/api/auditregistration/v1alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/auditregistration/v1alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/auditregistration/v1alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/batch/v2alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/batch/v2alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/settings/v1alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/settings/v1alpha1\nmmh imports\n\tsigs.k8s.io/controller-runtime imports\n\tsigs.k8s.io/controller-runtime/pkg/builder imports\n\tsigs.k8s.io/controller-runtime/pkg/client imports\n\tk8s.io/client-go/metadata: package k8s.io/client-go/metadata provided by k8s.io/client-go at latest version v0.24.0 but not at required version v11.0.1-0.20190409021438-1a26190bd76a+incompatible\nmmh imports\n\tsigs.k8s.io/controller-runtime imports\n\tsigs.k8s.io/controller-runtime/pkg/builder imports\n\tsigs.k8s.io/controller-runtime/pkg/client/apiutil imports\n\tk8s.io/client-go/discovery imports\n\tgithub.com/googleapis/gnostic/OpenAPIv2: module github.com/googleapis/gnostic@latest found (v0.6.9), but does not contain package github.com/googleapis/gnostic/OpenAPIv2\n\n    at ChildProcess.exithandler (child_process.js:383:12)\n    at ChildProcess.emit (events.js:400:28)\n    at ChildProcess.emit (domain.js:475:12)\n    at maybeClose (internal/child_process.js:1058:16)\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:293:5)"
+       }
+DEBUG: Failed to update go.sum (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "err": {
+         "killed": false,
+         "code": 1,
+         "signal": null,
+         "cmd": "go mod tidy",
+         "stdout": "",
+         "stderr": "go: downloading github.com/stretchr/testify v1.7.1\ngo: downloading go.uber.org/goleak v1.1.12\ngo: downloading github.com/onsi/ginkgo v1.16.5\ngo: downloading gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f\ngo: downloading github.com/benbjohnson/clock v1.1.0\ngo: downloading github.com/prashantv/gostub v1.1.0\ngo: downloading golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1\ngo: downloading github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e\ngo: downloading github.com/pmezard/go-difflib v1.0.0\ngo: downloading github.com/kr/text v0.2.0\ngo: downloading github.com/nxadm/tail v1.4.8\ngo: downloading gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7\ngo: finding module for package github.com/googleapis/gnostic/OpenAPIv2\ngo: finding module for package k8s.io/api/batch/v2alpha1\ngo: finding module for package k8s.io/api/settings/v1alpha1\ngo: finding module for package k8s.io/client-go/metadata\ngo: finding module for package k8s.io/api/auditregistration/v1alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/auditregistration/v1alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/auditregistration/v1alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/batch/v2alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/batch/v2alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/settings/v1alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/settings/v1alpha1\nmmh imports\n\tsigs.k8s.io/controller-runtime imports\n\tsigs.k8s.io/controller-runtime/pkg/builder imports\n\tsigs.k8s.io/controller-runtime/pkg/client imports\n\tk8s.io/client-go/metadata: package k8s.io/client-go/metadata provided by k8s.io/client-go at latest version v0.24.0 but not at required version v11.0.1-0.20190409021438-1a26190bd76a+incompatible\nmmh imports\n\tsigs.k8s.io/controller-runtime imports\n\tsigs.k8s.io/controller-runtime/pkg/builder imports\n\tsigs.k8s.io/controller-runtime/pkg/client/apiutil imports\n\tk8s.io/client-go/discovery imports\n\tgithub.com/googleapis/gnostic/OpenAPIv2: module github.com/googleapis/gnostic@latest found (v0.6.9), but does not contain package github.com/googleapis/gnostic/OpenAPIv2\n",
+         "message": "Command failed: go mod tidy\ngo: downloading github.com/stretchr/testify v1.7.1\ngo: downloading go.uber.org/goleak v1.1.12\ngo: downloading github.com/onsi/ginkgo v1.16.5\ngo: downloading gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f\ngo: downloading github.com/benbjohnson/clock v1.1.0\ngo: downloading github.com/prashantv/gostub v1.1.0\ngo: downloading golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1\ngo: downloading github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e\ngo: downloading github.com/pmezard/go-difflib v1.0.0\ngo: downloading github.com/kr/text v0.2.0\ngo: downloading github.com/nxadm/tail v1.4.8\ngo: downloading gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7\ngo: finding module for package github.com/googleapis/gnostic/OpenAPIv2\ngo: finding module for package k8s.io/api/batch/v2alpha1\ngo: finding module for package k8s.io/api/settings/v1alpha1\ngo: finding module for package k8s.io/client-go/metadata\ngo: finding module for package k8s.io/api/auditregistration/v1alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/auditregistration/v1alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/auditregistration/v1alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/batch/v2alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/batch/v2alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/settings/v1alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/settings/v1alpha1\nmmh imports\n\tsigs.k8s.io/controller-runtime imports\n\tsigs.k8s.io/controller-runtime/pkg/builder imports\n\tsigs.k8s.io/controller-runtime/pkg/client imports\n\tk8s.io/client-go/metadata: package k8s.io/client-go/metadata provided by k8s.io/client-go at latest version v0.24.0 but not at required version v11.0.1-0.20190409021438-1a26190bd76a+incompatible\nmmh imports\n\tsigs.k8s.io/controller-runtime imports\n\tsigs.k8s.io/controller-runtime/pkg/builder imports\n\tsigs.k8s.io/controller-runtime/pkg/client/apiutil imports\n\tk8s.io/client-go/discovery imports\n\tgithub.com/googleapis/gnostic/OpenAPIv2: module github.com/googleapis/gnostic@latest found (v0.6.9), but does not contain package github.com/googleapis/gnostic/OpenAPIv2\n",
+         "stack": "Error: Command failed: go mod tidy\ngo: downloading github.com/stretchr/testify v1.7.1\ngo: downloading go.uber.org/goleak v1.1.12\ngo: downloading github.com/onsi/ginkgo v1.16.5\ngo: downloading gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f\ngo: downloading github.com/benbjohnson/clock v1.1.0\ngo: downloading github.com/prashantv/gostub v1.1.0\ngo: downloading golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1\ngo: downloading github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e\ngo: downloading github.com/pmezard/go-difflib v1.0.0\ngo: downloading github.com/kr/text v0.2.0\ngo: downloading github.com/nxadm/tail v1.4.8\ngo: downloading gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7\ngo: finding module for package github.com/googleapis/gnostic/OpenAPIv2\ngo: finding module for package k8s.io/api/batch/v2alpha1\ngo: finding module for package k8s.io/api/settings/v1alpha1\ngo: finding module for package k8s.io/client-go/metadata\ngo: finding module for package k8s.io/api/auditregistration/v1alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/auditregistration/v1alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/auditregistration/v1alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/batch/v2alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/batch/v2alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/settings/v1alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/settings/v1alpha1\nmmh imports\n\tsigs.k8s.io/controller-runtime imports\n\tsigs.k8s.io/controller-runtime/pkg/builder imports\n\tsigs.k8s.io/controller-runtime/pkg/client imports\n\tk8s.io/client-go/metadata: package k8s.io/client-go/metadata provided by k8s.io/client-go at latest version v0.24.0 but not at required version v11.0.1-0.20190409021438-1a26190bd76a+incompatible\nmmh imports\n\tsigs.k8s.io/controller-runtime imports\n\tsigs.k8s.io/controller-runtime/pkg/builder imports\n\tsigs.k8s.io/controller-runtime/pkg/client/apiutil imports\n\tk8s.io/client-go/discovery imports\n\tgithub.com/googleapis/gnostic/OpenAPIv2: module github.com/googleapis/gnostic@latest found (v0.6.9), but does not contain package github.com/googleapis/gnostic/OpenAPIv2\n\n    at ChildProcess.exithandler (child_process.js:383:12)\n    at ChildProcess.emit (events.js:400:28)\n    at ChildProcess.emit (domain.js:475:12)\n    at maybeClose (internal/child_process.js:1058:16)\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:293:5)"
+       }
+DEBUG: Updated 1 package files (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: No updated lock files in branch (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Executing post-upgrade task (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "github.com/brumhard/alligotor",
+       "cmd": "go mod tidy"
+DEBUG: Executing command (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "github.com/brumhard/alligotor",
+       "command": "go mod tidy"
+DEBUG: exec completed (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "github.com/brumhard/alligotor",
+       "cmd": "go mod tidy",
+       "durationMs": 14490,
+       "stdout": "",
+       "stderr": "go: downloading go.uber.org/zap v1.21.0\ngo: downloading github.com/gardener/gardener v1.43.2\ngo: downloading github.com/pkg/errors v0.9.1\ngo: downloading k8s.io/api v0.22.9\ngo: downloading github.com/onsi/gomega v1.19.0\ngo: downloading github.com/brumhard/alligotor v0.3.3\ngo: downloading github.com/onsi/ginkgo/v2 v2.1.4\ngo: downloading go.uber.org/automaxprocs v1.5.1\ngo: downloading k8s.io/apimachinery v0.22.9\ngo: downloading k8s.io/client-go v0.22.9\ngo: downloading sigs.k8s.io/controller-runtime v0.10.3\ngo: downloading sigs.k8s.io/controller-runtime/tools/setup-envtest v0.0.0-20220428151950-3cb672286042\ngo: downloading go.uber.org/atomic v1.7.0\ngo: downloading go.uber.org/multierr v1.6.0\ngo: downloading github.com/mitchellh/mapstructure v1.4.1\ngo: downloading github.com/spf13/pflag v1.0.5\ngo: downloading gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b\ngo: downloading github.com/gogo/protobuf v1.3.2\ngo: downloading github.com/google/gofuzz v1.1.0\ngo: downloading sigs.k8s.io/yaml v1.3.0\ngo: downloading gopkg.in/yaml.v2 v2.4.0\ngo: downloading github.com/go-logr/logr v0.4.0\ngo: downloading github.com/go-logr/zapr v0.4.0\ngo: downloading github.com/spf13/afero v1.6.0\ngo: downloading golang.org/x/net v0.0.0-20220225172249-27dd8689420f\ngo: downloading golang.org/x/sys v0.0.0-20220319134239-a9b59b0215f8\ngo: downloading gopkg.in/inf.v0 v0.9.1\ngo: downloading github.com/google/go-cmp v0.5.6\ngo: downloading k8s.io/klog/v2 v2.10.0\ngo: downloading sigs.k8s.io/structured-merge-diff/v4 v4.2.1\ngo: downloading github.com/json-iterator/go v1.1.12\ngo: downloading github.com/modern-go/reflect2 v1.0.2\ngo: downloading github.com/davecgh/go-spew v1.1.1\ngo: downloading github.com/stretchr/testify v1.7.1\ngo: downloading go.uber.org/goleak v1.1.12\ngo: downloading github.com/benbjohnson/clock v1.1.0\ngo: downloading github.com/prashantv/gostub v1.1.0\ngo: downloading gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f\ngo: downloading github.com/onsi/ginkgo v1.16.5\ngo: downloading k8s.io/apiextensions-apiserver v0.22.9\ngo: downloading k8s.io/utils v0.0.0-20211116205334-6203023598ed\ngo: downloading github.com/prometheus/client_golang v1.11.1\ngo: downloading k8s.io/component-base v0.22.9\ngo: downloading github.com/evanphx/json-patch v4.12.0+incompatible\ngo: downloading golang.org/x/text v0.3.7\ngo: downloading github.com/golang/protobuf v1.5.2\ngo: downloading golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1\ngo: downloading github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd\ngo: downloading golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac\ngo: downloading gomodules.xyz/jsonpatch/v2 v2.2.0\ngo: downloading github.com/imdario/mergo v0.3.12\ngo: downloading golang.org/x/term v0.0.0-20210927222741-03fcf44c2211\ngo: downloading github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e\ngo: downloading github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da\ngo: downloading github.com/pmezard/go-difflib v1.0.0\ngo: downloading k8s.io/kube-openapi v0.0.0-20211115234752-e816edb12b65\ngo: downloading github.com/prometheus/client_model v0.2.0\ngo: downloading github.com/prometheus/common v0.28.0\ngo: downloading github.com/beorn7/perks v1.0.1\ngo: downloading github.com/cespare/xxhash/v2 v2.1.1\ngo: downloading github.com/prometheus/procfs v0.6.0\ngo: downloading github.com/Masterminds/semver v1.5.0\ngo: downloading golang.org/x/oauth2 v0.0.0-20210819190943-2bc19b11175f\ngo: downloading google.golang.org/protobuf v1.27.1\ngo: downloading github.com/googleapis/gnostic v0.5.5\ngo: downloading github.com/fsnotify/fsnotify v1.5.1\ngo: downloading github.com/google/uuid v1.1.2\ngo: downloading github.com/kr/text v0.2.0\ngo: downloading github.com/nxadm/tail v1.4.8\ngo: downloading github.com/matttproud/golang_protobuf_extensions v1.0.2-0.20181231171920-c182affec369\ngo: downloading google.golang.org/appengine v1.6.7\ngo: downloading gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7\ngo: downloading github.com/mitchellh/mapstructure v1.5.0\n"
+DEBUG: Executed post-upgrade task (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "github.com/brumhard/alligotor",
+       "cmd": "go mod tidy",
+       "stdout": "",
+       "stderr": "go: downloading go.uber.org/zap v1.21.0\ngo: downloading github.com/gardener/gardener v1.43.2\ngo: downloading github.com/pkg/errors v0.9.1\ngo: downloading k8s.io/api v0.22.9\ngo: downloading github.com/onsi/gomega v1.19.0\ngo: downloading github.com/brumhard/alligotor v0.3.3\ngo: downloading github.com/onsi/ginkgo/v2 v2.1.4\ngo: downloading go.uber.org/automaxprocs v1.5.1\ngo: downloading k8s.io/apimachinery v0.22.9\ngo: downloading k8s.io/client-go v0.22.9\ngo: downloading sigs.k8s.io/controller-runtime v0.10.3\ngo: downloading sigs.k8s.io/controller-runtime/tools/setup-envtest v0.0.0-20220428151950-3cb672286042\ngo: downloading go.uber.org/atomic v1.7.0\ngo: downloading go.uber.org/multierr v1.6.0\ngo: downloading github.com/mitchellh/mapstructure v1.4.1\ngo: downloading github.com/spf13/pflag v1.0.5\ngo: downloading gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b\ngo: downloading github.com/gogo/protobuf v1.3.2\ngo: downloading github.com/google/gofuzz v1.1.0\ngo: downloading sigs.k8s.io/yaml v1.3.0\ngo: downloading gopkg.in/yaml.v2 v2.4.0\ngo: downloading github.com/go-logr/logr v0.4.0\ngo: downloading github.com/go-logr/zapr v0.4.0\ngo: downloading github.com/spf13/afero v1.6.0\ngo: downloading golang.org/x/net v0.0.0-20220225172249-27dd8689420f\ngo: downloading golang.org/x/sys v0.0.0-20220319134239-a9b59b0215f8\ngo: downloading gopkg.in/inf.v0 v0.9.1\ngo: downloading github.com/google/go-cmp v0.5.6\ngo: downloading k8s.io/klog/v2 v2.10.0\ngo: downloading sigs.k8s.io/structured-merge-diff/v4 v4.2.1\ngo: downloading github.com/json-iterator/go v1.1.12\ngo: downloading github.com/modern-go/reflect2 v1.0.2\ngo: downloading github.com/davecgh/go-spew v1.1.1\ngo: downloading github.com/stretchr/testify v1.7.1\ngo: downloading go.uber.org/goleak v1.1.12\ngo: downloading github.com/benbjohnson/clock v1.1.0\ngo: downloading github.com/prashantv/gostub v1.1.0\ngo: downloading gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f\ngo: downloading github.com/onsi/ginkgo v1.16.5\ngo: downloading k8s.io/apiextensions-apiserver v0.22.9\ngo: downloading k8s.io/utils v0.0.0-20211116205334-6203023598ed\ngo: downloading github.com/prometheus/client_golang v1.11.1\ngo: downloading k8s.io/component-base v0.22.9\ngo: downloading github.com/evanphx/json-patch v4.12.0+incompatible\ngo: downloading golang.org/x/text v0.3.7\ngo: downloading github.com/golang/protobuf v1.5.2\ngo: downloading golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1\ngo: downloading github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd\ngo: downloading golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac\ngo: downloading gomodules.xyz/jsonpatch/v2 v2.2.0\ngo: downloading github.com/imdario/mergo v0.3.12\ngo: downloading golang.org/x/term v0.0.0-20210927222741-03fcf44c2211\ngo: downloading github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e\ngo: downloading github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da\ngo: downloading github.com/pmezard/go-difflib v1.0.0\ngo: downloading k8s.io/kube-openapi v0.0.0-20211115234752-e816edb12b65\ngo: downloading github.com/prometheus/client_model v0.2.0\ngo: downloading github.com/prometheus/common v0.28.0\ngo: downloading github.com/beorn7/perks v1.0.1\ngo: downloading github.com/cespare/xxhash/v2 v2.1.1\ngo: downloading github.com/prometheus/procfs v0.6.0\ngo: downloading github.com/Masterminds/semver v1.5.0\ngo: downloading golang.org/x/oauth2 v0.0.0-20210819190943-2bc19b11175f\ngo: downloading google.golang.org/protobuf v1.27.1\ngo: downloading github.com/googleapis/gnostic v0.5.5\ngo: downloading github.com/fsnotify/fsnotify v1.5.1\ngo: downloading github.com/google/uuid v1.1.2\ngo: downloading github.com/kr/text v0.2.0\ngo: downloading github.com/nxadm/tail v1.4.8\ngo: downloading github.com/matttproud/golang_protobuf_extensions v1.0.2-0.20181231171920-c182affec369\ngo: downloading google.golang.org/appengine v1.6.7\ngo: downloading gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7\ngo: downloading github.com/mitchellh/mapstructure v1.5.0\n"
+DEBUG: Post-upgrade file saved (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "github.com/brumhard/alligotor",
+       "file": "go.mod",
+       "pattern": "go.mod"
+DEBUG: Post-upgrade file saved (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "github.com/brumhard/alligotor",
+       "file": "go.sum",
+       "pattern": "go.sum"
+DEBUG: Executing post-upgrade task (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "k8s.io/api",
+       "cmd": "go mod tidy"
+DEBUG: Executing command (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "k8s.io/api",
+       "command": "go mod tidy"
+DEBUG: exec completed (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "k8s.io/api",
+       "cmd": "go mod tidy",
+       "durationMs": 208,
+       "stdout": "",
+       "stderr": ""
+DEBUG: Executed post-upgrade task (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "k8s.io/api",
+       "cmd": "go mod tidy",
+       "stdout": "",
+       "stderr": ""
+DEBUG: Post-upgrade file saved (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "k8s.io/api",
+       "file": "go.mod",
+       "pattern": "go.mod"
+DEBUG: Post-upgrade file saved (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "k8s.io/api",
+       "file": "go.sum",
+       "pattern": "go.sum"
+DEBUG: Executing post-upgrade task (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "k8s.io/apimachinery",
+       "cmd": "go mod tidy"
+DEBUG: Executing command (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "k8s.io/apimachinery",
+       "command": "go mod tidy"
+DEBUG: exec completed (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "k8s.io/apimachinery",
+       "cmd": "go mod tidy",
+       "durationMs": 184,
+       "stdout": "",
+       "stderr": ""
+DEBUG: Executed post-upgrade task (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "k8s.io/apimachinery",
+       "cmd": "go mod tidy",
+       "stdout": "",
+       "stderr": ""
+DEBUG: Post-upgrade file saved (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "k8s.io/apimachinery",
+       "file": "go.mod",
+       "pattern": "go.mod"
+DEBUG: Post-upgrade file saved (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "dep": "k8s.io/apimachinery",
+       "file": "go.sum",
+       "pattern": "go.sum"
+DEBUG: Branch timestamp: 2022-04-30T15:56:57.000Z (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: PR is older than 2 hours, raise PR with lock file errors (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: isBranchConflicted(main, renovateSelfHosted/all-minor-patch) (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Setting git author name (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "gitAuthorName": "Renovate Bot"
+DEBUG: Setting git author email (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "gitAuthorEmail": "renovate@whitesourcesoftware.com"
+DEBUG: 2 file(s) to commit (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Preparing files for committing to branch renovateSelfHosted/all-minor-patch (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: git commit (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "deletedFiles": [],
+       "ignoredFiles": [],
+       "result": {
+         "author": null,
+         "branch": "renovateSelfHosted/all-minor-patch",
+         "commit": "837d5c06abe74d874e6e5ce1368bc16dcf3980e1",
+         "root": false,
+         "summary": {"changes": 2, "insertions": 8, "deletions": 9}
+       }
+DEBUG: Pushing branch renovateSelfHosted/all-minor-patch (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: git push (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "result": {
+         "pushed": [],
+         "ref": {"local": "refs/remotes/origin/renovateSelfHosted/all-minor-patch"},
+         "remoteMessages": {"all": []}
+       }
+ INFO: Branch updated (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "commitSha": "837d5c06abe74d874e6e5ce1368bc16dcf3980e1"
+DEBUG: Updating status check state to failed (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Setting branch status (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "context": "renovate/artifacts",
+       "state": "red"
+DEBUG: Checking if we can automerge branch (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: mergeStatus=no automerge (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Ensuring PR (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: There are 0 errors and 0 warnings (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: getBranchPr(renovateSelfHosted/all-minor-patch) (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: findPr(renovateSelfHosted/all-minor-patch, undefined, open) (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Found PR #3 (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Found existing PR (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Forcing PR because of artifact errors (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Processing existing PR (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: updatePr(3, Update all non-major dependencies, body) (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: PR updated (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "pr": 3
+ INFO: PR updated (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "pr": 3,
+       "prTitle": "Update all non-major dependencies"
+ WARN: artifactErrors (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "artifactErrors": [
+         {
+           "lockFile": "go.sum",
+           "stderr": "Command failed: go mod tidy\ngo: downloading github.com/stretchr/testify v1.7.1\ngo: downloading go.uber.org/goleak v1.1.12\ngo: downloading github.com/onsi/ginkgo v1.16.5\ngo: downloading gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f\ngo: downloading github.com/benbjohnson/clock v1.1.0\ngo: downloading github.com/prashantv/gostub v1.1.0\ngo: downloading golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1\ngo: downloading github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e\ngo: downloading github.com/pmezard/go-difflib v1.0.0\ngo: downloading github.com/kr/text v0.2.0\ngo: downloading github.com/nxadm/tail v1.4.8\ngo: downloading gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7\ngo: finding module for package github.com/googleapis/gnostic/OpenAPIv2\ngo: finding module for package k8s.io/api/batch/v2alpha1\ngo: finding module for package k8s.io/api/settings/v1alpha1\ngo: finding module for package k8s.io/client-go/metadata\ngo: finding module for package k8s.io/api/auditregistration/v1alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/auditregistration/v1alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/auditregistration/v1alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/batch/v2alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/batch/v2alpha1\nmmh imports\n\tk8s.io/client-go/kubernetes/scheme imports\n\tk8s.io/api/settings/v1alpha1: module k8s.io/api@latest found (v0.24.0), but does not contain package k8s.io/api/settings/v1alpha1\nmmh imports\n\tsigs.k8s.io/controller-runtime imports\n\tsigs.k8s.io/controller-runtime/pkg/builder imports\n\tsigs.k8s.io/controller-runtime/pkg/client imports\n\tk8s.io/client-go/metadata: package k8s.io/client-go/metadata provided by k8s.io/client-go at latest version v0.24.0 but not at required version v11.0.1-0.20190409021438-1a26190bd76a+incompatible\nmmh imports\n\tsigs.k8s.io/controller-runtime imports\n\tsigs.k8s.io/controller-runtime/pkg/builder imports\n\tsigs.k8s.io/controller-runtime/pkg/client/apiutil imports\n\tk8s.io/client-go/discovery imports\n\tgithub.com/googleapis/gnostic/OpenAPIv2: module github.com/googleapis/gnostic@latest found (v0.6.9), but does not contain package github.com/googleapis/gnostic/OpenAPIv2\n"
+         }
+       ]
+DEBUG: Getting comments for #3 (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Found 0 comments (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+DEBUG: Ensuring comment "⚠ Artifact update problem" in #3 (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+ INFO: Comment added (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/all-minor-patch)
+       "issueNo": 3,
+       "topic": "⚠ Artifact update problem"
+DEBUG: Setting current branch to main (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: latest commit (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+       "branchName": "main",
+       "latestCommitDate": "2022-05-04T10:24:15+02:00"
+DEBUG: getBranchPr(renovateSelfHosted/major-kubernetes-go) (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: findPr(renovateSelfHosted/major-kubernetes-go, undefined, open) (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: Found PR #4 (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: branchExists=true (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: dependencyDashboardCheck=undefined (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: PR rebase requested=false (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: Checking if PR has been edited (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: Branch has not been modified (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+       "branchName": "renovateSelfHosted/major-kubernetes-go"
+DEBUG: Found existing branch PR (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: Checking schedule(at any time, null) (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: No schedule defined (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: Branch already exists (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: getBranchPr(renovateSelfHosted/major-kubernetes-go) (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: findPr(renovateSelfHosted/major-kubernetes-go, undefined, open) (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: Found PR #4 (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: Endpoint needs paid GitHub plan (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+       "path": "repos/brumhard/renovate-testing2/branches/main/protection"
+DEBUG: Branch protection: Do not have permissions to detect branch protection (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: Skipping stale branch check due to rebaseWhen=auto (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: isBranchConflicted(main, renovateSelfHosted/major-kubernetes-go) (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: Branch does not need rebasing (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: Using reuseExistingBranch: true (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: manager.getUpdatedPackageFiles() reuseExistinbranch=true (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: gomod.updateDependency: v12.0.0 (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: gomod: major update (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+       "depName": "k8s.io/client-go"
+DEBUG: No changes necessary (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: No package files need updating (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: No updated lock files in branch (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: No files to commit (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: Checking if we can automerge branch (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: mergeStatus=no automerge (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: Ensuring PR (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: There are 0 errors and 0 warnings (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: getBranchPr(renovateSelfHosted/major-kubernetes-go) (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: findPr(renovateSelfHosted/major-kubernetes-go, undefined, open) (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: Found PR #4 (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: Found existing PR (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: Processing existing PR (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: Pull Request #4 does not need updating (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: PR is not configured for automerge (repository=brumhard/renovate-testing2, branch=renovateSelfHosted/major-kubernetes-go)
+DEBUG: getBranchPr(renovateSelfHosted/all-minor-patch) (repository=brumhard/renovate-testing2)
+DEBUG: findPr(renovateSelfHosted/all-minor-patch, undefined, open) (repository=brumhard/renovate-testing2)
+DEBUG: Found PR #3 (repository=brumhard/renovate-testing2)
+DEBUG: getBranchPr(renovateSelfHosted/major-kubernetes-go) (repository=brumhard/renovate-testing2)
+DEBUG: findPr(renovateSelfHosted/major-kubernetes-go, undefined, open) (repository=brumhard/renovate-testing2)
+DEBUG: Found PR #4 (repository=brumhard/renovate-testing2)
+DEBUG: Ensuring Dependency Dashboard (repository=brumhard/renovate-testing2)
+DEBUG: ensureIssue(Dependency Dashboard) (repository=brumhard/renovate-testing2)
+DEBUG: Issue is open and up to date - nothing to do (repository=brumhard/renovate-testing2)
+DEBUG: Removing any stale branches (repository=brumhard/renovate-testing2)
+DEBUG: config.repoIsOnboarded=true (repository=brumhard/renovate-testing2)
+DEBUG: Branch lists (repository=brumhard/renovate-testing2)
+       "branchList": ["renovateSelfHosted/all-minor-patch", "renovateSelfHosted/major-kubernetes-go"],
+       "renovateBranches": ["renovateSelfHosted/all-minor-patch", "renovateSelfHosted/major-kubernetes-go"]
+DEBUG: remainingBranches= (repository=brumhard/renovate-testing2)
+DEBUG: No branches to clean up (repository=brumhard/renovate-testing2)
+DEBUG: Repository timing splits (milliseconds) (repository=brumhard/renovate-testing2)
+       "splits": {"init": 5069, "extract": 836, "lookup": 11019, "update": 56397},
+       "total": 74933
+DEBUG: http statistics (repository=brumhard/renovate-testing2)
+       "urls": {
+         "https://api.github.com/graphql (POST,200)": 2,
+         "https://api.github.com/repos/brumhard/alligotor (GET,200)": 1,
+         "https://api.github.com/repos/brumhard/alligotor/git/trees/main (GET,200)": 1,
+         "https://api.github.com/repos/brumhard/alligotor/releases (GET,200)": 1,
+         "https://api.github.com/repos/brumhard/alligotor/tags (GET,200)": 1,
+         "https://api.github.com/repos/brumhard/renovate-testing2/branches/main/protection (GET,403)": 1,
+         "https://api.github.com/repos/brumhard/renovate-testing2/commits/837d5c06abe74d874e6e5ce1368bc16dcf3980e1/statuses (GET,200)": 2,
+         "https://api.github.com/repos/brumhard/renovate-testing2/commits/renovateSelfHosted/all-minor-patch/status (GET,200)": 1,
+         "https://api.github.com/repos/brumhard/renovate-testing2/issues/3/comments (GET,200)": 1,
+         "https://api.github.com/repos/brumhard/renovate-testing2/issues/3/comments (POST,201)": 1,
+         "https://api.github.com/repos/brumhard/renovate-testing2/issues/5 (GET,200)": 2,
+         "https://api.github.com/repos/brumhard/renovate-testing2/pulls (GET,200)": 1,
+         "https://api.github.com/repos/brumhard/renovate-testing2/pulls/3 (PATCH,200)": 1,
+         "https://api.github.com/repos/brumhard/renovate-testing2/statuses/837d5c06abe74d874e6e5ce1368bc16dcf3980e1 (POST,201)": 1,
+         "https://api.github.com/repos/gardener/gardener/releases (GET,200)": 1,
+         "https://api.github.com/repos/gardener/gardener/tags (GET,200)": 1,
+         "https://api.github.com/repos/kubernetes-sigs/controller-runtime/releases (GET,200)": 1,
+         "https://api.github.com/repos/kubernetes-sigs/controller-runtime/tags (GET,200)": 1,
+         "https://api.github.com/repos/kubernetes/api (GET,200)": 1,
+         "https://api.github.com/repos/kubernetes/api/git/trees/master (GET,200)": 1,
+         "https://api.github.com/repos/kubernetes/api/releases (GET,200)": 1,
+         "https://api.github.com/repos/kubernetes/api/tags (GET,200)": 1,
+         "https://api.github.com/repos/kubernetes/apimachinery (GET,200)": 1,
+         "https://api.github.com/repos/kubernetes/apimachinery/git/trees/master (GET,200)": 1,
+         "https://api.github.com/repos/kubernetes/apimachinery/releases (GET,200)": 1,
+         "https://api.github.com/repos/kubernetes/apimachinery/tags (GET,200)": 1,
+         "https://api.github.com/repos/kubernetes/client-go/releases (GET,200)": 1,
+         "https://api.github.com/repos/kubernetes/client-go/tags (GET,200)": 1,
+         "https://api.github.com/repos/onsi/ginkgo/releases (GET,200)": 1,
+         "https://api.github.com/repos/onsi/ginkgo/tags (GET,200)": 1,
+         "https://api.github.com/repos/onsi/gomega/releases (GET,200)": 1,
+         "https://api.github.com/repos/onsi/gomega/tags (GET,200)": 1,
+         "https://api.github.com/repos/pkg/errors/releases (GET,200)": 1,
+         "https://api.github.com/repos/pkg/errors/tags (GET,200)": 1,
+         "https://api.github.com/repos/uber-go/automaxprocs/releases (GET,200)": 1,
+         "https://api.github.com/repos/uber-go/automaxprocs/tags (GET,200)": 1,
+         "https://api.github.com/repos/uber-go/zap/releases (GET,200)": 1,
+         "https://api.github.com/repos/uber-go/zap/tags (GET,200)": 1,
+         "https://api.github.com/repositories/117377862/releases (GET,200)": 3,
+         "https://api.github.com/repositories/117377862/tags (GET,200)": 3,
+         "https://api.github.com/repositories/66509131/tags (GET,200)": 9,
+         "https://api.github.com/repositories/78460122/tags (GET,200)": 9,
+         "https://api.github.com/repositories/93561151/tags (GET,200)": 8,
+         "https://go.uber.org/automaxprocs (GET,200)": 1,
+         "https://go.uber.org/zap (GET,200)": 1,
+         "https://k8s.io/api (GET,200)": 1,
+         "https://k8s.io/apimachinery (GET,200)": 1,
+         "https://k8s.io/client-go (GET,200)": 1,
+         "https://sigs.k8s.io/controller-runtime (GET,200)": 1
+       },
+       "hostStats": {
+         "api.github.com": {"requestCount": 73, "requestAvgMs": 1058, "queueAvgMs": 0},
+         "go.uber.org": {"requestCount": 2, "requestAvgMs": 594, "queueAvgMs": 1},
+         "k8s.io": {"requestCount": 3, "requestAvgMs": 586, "queueAvgMs": 0},
+         "sigs.k8s.io": {"requestCount": 1, "requestAvgMs": 417, "queueAvgMs": 1}
+       },
+       "totalRequests": 79
+ INFO: Repository finished (repository=brumhard/renovate-testing2)
+       "durationMs": 74933
+DEBUG: Renovate exiting
