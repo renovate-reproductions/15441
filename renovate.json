@@ -11,15 +11,6 @@
   ],
   "platformAutomerge": true,
   "automerge": false,
-  "patch": {
-    "enabled": true
-  },
-  "minor": {
-    "enabled": true
-  },
-  "major": {
-    "enabled": true
-  },
   "postUpdateOptions": [
     "gomodTidy"
   ]
